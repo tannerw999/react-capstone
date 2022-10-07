@@ -1,4 +1,4 @@
-export default function RestaurantCard (props) {
+export default function RestaurantList (props) {
     
     return (
         <div>

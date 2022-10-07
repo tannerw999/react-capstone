@@ -1,0 +1,31 @@
+[
+  {
+    "id": 0,
+    "restaurant": "Apollo Burger"
+  },
+
+  {
+    "id": 1,
+    "restaurant": "Chik-fil-A"
+  },
+
+  {
+    "id": 2,
+    "restaurant": "Chubby's Cafe"
+  },
+
+  {
+    "id": 3,
+    "restaurant": "Smoking Apple"
+  },
+
+  {
+    "id": 4,
+    "restaurant": "Taco Amigo"
+  },
+
+  {
+    "id": 5,
+    "restaurant": "Zao"
+  }
+]
