@@ -9,14 +9,9 @@ app.use(cors());
 
 const {getRestaurants, addRestaurant, deleteRestaurant} = require('./controller')
 
-// app.get("/api/restaurant", (req, res) => {
-//   console.log("endpoint hit");
-//   res.status(200).send("future info of restaurants and stuff");
-// });
-
-app.get('/api/restaurant', getRestaurants)
+app.get('/api/restaurants', getRestaurants)
 app.post('/api/restaurant', addRestaurant)
-app.delete('api/delete/restaurant/:id', deleteRestaurant)
+app.delete('/api/restaurant', deleteRestaurant)
 
 
 app.listen(SERVER_PORT, () =>

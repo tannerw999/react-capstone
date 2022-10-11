@@ -1,40 +1,49 @@
-import {useState} from 'react';
-// import database from "./server/database";
-// import RestaurantList from "./components/RestaurantList";
+import {useEffect, useState} from 'react';
 import axios from 'axios'
-import "./App.css";
+import './App.css';
+import Header from './components/Header';
+import NewRestaurant from './components/NewRestaurant';
+import RestaurantList from './components/RestaurantList';
+import Footer from './components/Footer';
+
 
 export default function App() {
   
-  const [restaurant, setRestaurant] = useState('')
+  const [restaurant, setRestaurant] = useState({})
+  const [restaurants, setRestaurants] = useState([])
+
+  const getRestaurants = () => {
+    console.log('getRestaurants')
+    axios.get('http://localhost:4646/api/restaurants')
+    .then((res) => setRestaurants(res.data))
+  }
   
   const addRestaurant = () => {
     axios.post('http://localhost:4646/api/restaurant', {restaurant})
     .then(res => console.log(res.data))
   }
   
-  // const deleteRestaurant = () => {
-  //   axios.delete(`http://localhost:4646/api/delete/restaurant/${indexSelectDelete.value}`)
-  //   .then((res) => {
-  //     alert(res.data);
-  //     });
-  // }
+  const deleteRestaurant = () => {
+    axios.delete(`http://localhost:4646/api/restaurant`)
+    .then((res) => {
+      setRestaurants(res.data);
+      });
+  }
+    useEffect(() => {
+      console.log('hit useEffect')
+      getRestaurants()
+    }, [])
 
   return (
     <div className="App">
-      <input placeholder='restaurant' onChange={e => setRestaurant(e.target.value)}/>
-      <button onClick={() => addRestaurant()}>Add To List</button>
+      <Header />
+      <NewRestaurant
+        addRestaurant = {addRestaurant}
+        getRestaurants = {getRestaurants} />
+      <RestaurantList 
+        restaurants = {restaurants}
+        deleteRestaurant ={deleteRestaurant} />
+      <Footer />
     </div>
   );
 }
-// const restaurants = database.map((item) => {
-//   return (
-//     <RestaurantList title={item.restaurant} />
-//   )
-// });
-
-// return (
-//   <div>
-//     {restaurants}
-//   </div>
-// ); 

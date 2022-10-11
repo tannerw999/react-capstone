@@ -4,6 +4,7 @@ let id = 6
 module.exports = {
 
     getRestaurants: (req, res) => {
+        console.log("hit  get restaurants", restaurants)
         res.status(200).send(restaurants)
     },
 
@@ -23,13 +24,8 @@ module.exports = {
     },
 
     deleteRestaurant: (req, res) => {
-        console.log("ENDPOINT HIT HIT HIT");
-        console.log(req.params);
-
-        const indexToDelete = +req.params.id;
-
-        restaurants.splice(indexToDelete, 1);
-
-        res.status(200).send(restaurants);
+        restaurants.splice(restaurants.length - 1, 1)
+        console.log('restaurant deleted', restaurants)
+        res.status(200).send(restaurants)
     }
 }
