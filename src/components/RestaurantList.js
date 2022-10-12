@@ -1,7 +1,13 @@
 import React from "react";
 
 export default function RestaurantList(props) {
-  console.log(props);
+
+    function random() {
+        const maxRestaurant = props.restaurants.length -1;
+        const randomRestaurant = Math.floor((Math.random() * maxRestaurant) + 1);
+        alert(props.restaurants[randomRestaurant].restaurant) 
+      }
+
   return (
     <div>
       <div>
@@ -16,6 +22,7 @@ export default function RestaurantList(props) {
           Remove Restaurant
         </button>
       </div>
+        <button onClick={() => random()}>Random</button>
     </div>
   );
 }

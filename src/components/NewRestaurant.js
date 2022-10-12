@@ -7,12 +7,14 @@ export default function NewRestaurant (props) {
 
     const addRestaurant = () => {
       axios.post('http://localhost:4646/api/restaurant', {restaurant})
-        .then(res => props.getRestaurants())
+        .then(res => {
+            setRestaurant('')
+            props.getRestaurants()})
     }
-    
+     
     return (
       <div className="App">
-        <input placeholder='new restaurant' onChange={e => setRestaurant(e.target.value)}/>
+        <input value={restaurant} type="text" placeholder='New Restaurant' onChange={e => setRestaurant(e.target.value)}/>
         <button onClick={() => addRestaurant()}>Add To List</button>
       </div>
     );
