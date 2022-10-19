@@ -1,14 +1,19 @@
 header {
+    display: flex;
+    justify-content: center;
     color: #F2F4F3;
     background-color: #06AED5;
-    margin: 30px;
-    font-size: 40px;
+    margin: 25px;
+    font-size: 30px;
     border: 4mm ridge rgba(238, 92, 44, 0.982);
     border-radius: 20px;
+    box-shadow: 5px 5px #888888;
+    text-shadow:-1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px -1px 0 #000,
+   -1px -1px 0 #000;
 }
 
 h5 {
-    color:#e0e7e9;
-    padding: 5px;
     font-size:20px;
 }

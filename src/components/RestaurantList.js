@@ -1,4 +1,5 @@
 import React from "react";
+import './RestaurantList.css'
 
 export default function RestaurantList(props) {
 
@@ -10,19 +11,19 @@ export default function RestaurantList(props) {
 
   return (
     <div>
-      <div>
+          <button className='random' onClick={() => random()}>Random</button>
+      <div className='scrollable-div'>
         {props.restaurants.map((restaurant) => {
           return (
-            <div>
+            <div className='list'>
               <h1>{restaurant.restaurant}</h1>
             </div>
           );
         })}
+      </div>
         <button onClick={() => props.deleteRestaurant()}>
           Remove Restaurant
         </button>
-      </div>
-        <button onClick={() => random()}>Random</button>
     </div>
   );
 }

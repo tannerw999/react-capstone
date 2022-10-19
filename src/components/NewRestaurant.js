@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import './RestaurantList.css';
 
 export default function NewRestaurant (props) {
     
@@ -13,9 +14,9 @@ export default function NewRestaurant (props) {
     }
      
     return (
-      <div className="App">
+      <div>
         <input value={restaurant} type="text" placeholder='New Restaurant' onChange={e => setRestaurant(e.target.value)}/>
-        <button onClick={() => addRestaurant()}>Add To List</button>
+        <button onClick={addRestaurant}>Add To List</button>
       </div>
     );
 }

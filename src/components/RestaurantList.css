@@ -1,0 +1,19 @@
+.list {
+    margin: 50px;
+    color: #f0c808;
+    text-shadow:-1px 1px 0 #000,
+    1px 1px 0 #000,
+   1px -1px 0 #000,
+  -1px -1px 0 #000;
+}
+
+.scrollable-div {
+    height: 400px;
+    overflow: auto;
+    margin: 20px;
+  }
+
+.random {
+    width: 230px;
+    margin: 10px;
+}
